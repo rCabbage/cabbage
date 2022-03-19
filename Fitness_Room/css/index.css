@@ -1,0 +1,162 @@
+
+
+/* 服务 begin */
+.service .container .row .list-unstyled{
+    margin-top: 20px;
+}
+.service .container .row .list-unstyled .circular{
+    margin: 0px auto;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;    
+    background-color: black;
+    transition: background-color 0.5s;
+}
+.service .container .row .list-unstyled .circular img{
+    transition: transform 0.5s;
+}
+.service .container .row ul li:hover >.circular{
+    background-color: cyan;
+}
+
+.service .container .row ul li:hover >.circular img{
+    transform: rotate(360deg);
+}
+
+.service .container .row .list-unstyled li h4{
+    text-align: center;
+}
+.service .container .row .list-unstyled li p{
+    font-size: 18px;
+}
+.service .container .row .list-unstyled li{
+    height: 215px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 服务 end */
+
+/* 关于我们 begin */
+
+.about-us{
+    margin-top: 50px;
+    background-color: black;
+    color: white;
+}
+.about-us .container .row .about-title h2,.about-us .container .row .about-box{
+    margin-top: 40px;
+}
+.about-us .container .row .about-link{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.about-us .container .row .about-link a{
+    padding: 10px 25px;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.5s;
+}
+.about-us .container .row .about-link a:hover{
+    color: black;
+    background-color: white;
+}
+.about-us .container .row .about-video{
+    margin:20px 0px;
+}
+/* 关于我们 end  */
+
+/* 课程 begin */
+.course .container .row ul li img{
+    transition: all 0.5s;
+}
+.course .container .row ul li:hover img{
+    transform: translateY(-10px);
+}
+.course .container .row ul li h4{
+    font-size: 20px;
+}
+.course .container .row{
+    margin-top: 30px;
+}
+.course .container .cf{
+    margin-bottom: 50px;
+}
+.course .container .row .more{
+    padding: 10px 20px;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    transition: all 0.5s;
+}
+.courseone .container .row .more:hover{
+    background-color: black;
+    color: white;
+}
+.coursetwo{
+    color: white;
+    background-color: black;
+}
+.coursetwo .container .row .more{
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+}
+.coursetwo .container .row .more:hover{
+    background-color: white;
+    color: black;
+}
+/* 课程 end */
+
+/* 新闻资讯 begin */
+.news .container .content{
+    margin-top: 40px;
+}
+.news .container .row ul li + li{
+    border-top: 1px solid rgba(143, 140, 140, 0.548);
+    margin-top: 20px;
+}
+.news .container .row ul li h5 a b{
+    color: black;
+    font-size: 20px;
+}
+.news .container .row ul li p{
+    font-size: 17px;
+    color: rgba(143, 140, 140, 0.548);
+}
+.news .container .row ul li .time{
+    float: right;
+    color: rgba(143, 140, 140, 0.548);
+}
+.news .container .row ul li div{
+    color: rgba(112, 111, 111, 0.808);
+    margin-bottom: 10px;
+}
+.news .container .row ul li div a{
+    color: rgba(112, 111, 111, 0.808);
+}
+.news .container .row ul li div a:hover{
+    color: black;
+    font-weight: 600;
+}
+.news .container .row ul li .activity{
+    padding: 10px 25px;
+    font-size: 20px;
+    background-color: rgba(160, 156, 156, 0.432);
+}
+.news .container .row ul li .point{
+    float: right;
+}
+.news .container .row ul li .point div{
+    float: left;
+    margin-right: 5px;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    background-color: rgba(160, 156, 156, 0.432);
+}
+
+
+/* 新闻资讯 end */

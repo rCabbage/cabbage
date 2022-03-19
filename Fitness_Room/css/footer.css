@@ -1,0 +1,45 @@
+/* footer begin */
+.footer{
+    background-color: black;
+}
+.footer .container .footer-about{
+    margin-top: 40px;
+}
+.footer .container .footer-about ul li + li{
+    margin-top: 10px;
+}
+.footer .container .footer-about ul li{
+    font-size: 17px;
+    color: rgba(230, 228, 228, 0.479);
+}
+.footer .container .footer-about ul li h4{
+    color: white;
+}
+.footer .container .footer-about .hotline{
+    color: rgba(230, 228, 228, 0.479);
+}
+.footer .container .footer-about .hotline div{
+    color: white;
+    padding-bottom: 5px;
+    font-size: 25px;
+    border-bottom: 1px solid rgba(230, 228, 228, 0.479);
+}
+.footer .container .footer-about .hotline p{
+    margin-top: 5px;
+    font-size: 16px;
+}
+.footer .footer-link{
+    padding: 20px 0;
+    background-color: rgba(87, 86, 86, 0.1);
+}
+.footer .footer-link a{
+    font-size: 20px;
+    color: rgba(230, 228, 228, 0.658);
+}
+.footer .copyright{
+    padding: 20px 0;
+    font-size: 20px;
+    color: rgba(230, 228, 228, 0.658);
+    background-color: black;
+}
+/* footer end */

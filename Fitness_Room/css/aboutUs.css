@@ -1,0 +1,42 @@
+/* conten begin */
+.conn{
+    margin-top: 50px;
+}
+.conn .row div ul{
+    padding: 5px 10px 10px 10px;
+    background-color: rgba(255, 255, 255, 0.336);
+}
+.conn .row div ul li div{
+    float: left;
+    margin-right: 10px;
+    height: 25px;
+    width: 10px;
+    background-color: black;
+}
+.conn .row div .new li a{
+    color: rgba(71, 71, 71, 0.63);
+    font-size: 16px;
+}
+.conn .row div .new li + li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(71, 71, 71, 0.63);;
+}
+.conn .row div ul li img{
+    transition: all 0.5s;
+}
+.conn .row div ul li:hover img{
+    transform: translateY(-10px);
+}
+.conn .row div .new li a:hover{
+    color: black;
+    font-weight: 600;
+}
+.conn .row div .panel .breadcrumb{
+    padding: 10px;
+    margin: 0px;
+}
+.conn .row div .panel .panel-body{
+    font-size: 16px;
+}
+/* conten end */

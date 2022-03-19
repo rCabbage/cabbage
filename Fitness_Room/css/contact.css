@@ -1,0 +1,28 @@
+.contact img{
+    margin: 0px auto;
+}
+.contact .row h3{
+    color: cyan;
+    font-weight: 600;
+    font-size: 20px;
+}
+.contact .row h1{
+    font-size: 48px;
+}
+.contact .row .line{
+    margin: 30px auto;
+    height: 10px;
+    width: 100px;
+    background-color: black;
+}
+.contact .row{
+    margin-top: 50px;
+}
+.contact .row .col-md-8 img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.contact .row .col-md-8 p{
+    font-size: 20px;
+    font-weight: 600;
+}

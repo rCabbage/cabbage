@@ -1,0 +1,29 @@
+/* conn begin */
+.conn .row div .panel-body .media{
+    border-bottom: 1px solid rgba(59, 58, 58, 0.808);
+    padding-bottom: 2px;
+}
+.conn .row div .panel-body .media .media-body h4 a{
+    font-weight: 600;
+}
+.conn .row div .panel-body .media .media-body h4 span{
+    padding: 1px;
+}
+.conn .row div .panel-body .media .media-body .medialab{
+    margin-top: 15px;
+    color: rgba(102, 102, 102, 0.61);
+}
+.conn .row div .panel-body .media .media-body .mediaconn{
+    font-size: 14px;
+    color: rgba(59, 58, 58, 0.808);
+}
+.conn .row div .panel-body .media .media-body .readmore{
+    float: right;
+}
+.conn .row div .pagination{
+    background-color: transparent;
+}
+.conn .row .col-md-9 .panel .panel-body .two,.conn .row .col-md-9 .panel .panel-body .three{
+    display: none;
+}
+/* conn end */

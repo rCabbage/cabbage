@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/common.css">
+    <title>健身房</title>
+</head>
+
+<body>
+    <!-- 导航栏 begin -->
+
+    <nav class="navbar navbar-default">
+
+        <div class="container">
+            <div class="row logosearch">
+                <div class="col-xs-3 logo">
+                    <a href="index.html"><img id="s" src="img/logo1.png" alt=""></a>
+                </div>
+                <div class="col-xs-4 col-xs-offset-5 search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入……">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-target="#navbar-default-collapse"
+                        data-toggle="collapse">
+                        <span class="sr-only">
+                            Toggle navigation
+                        </span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">首页</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-default-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown" id="aboutUs">
+                            <a  class="dropdown-toggle" href="aboutUs.html">
+                                关于我们
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" id="about">
+                                <li><a href="aboutUs1.html" class="">塑形美体</a></li>
+                                <li><a href="aboutUs2.html" class="">经典纯粹</a></li>
+                                <li><a href="aboutUs3.html" class="">理疗修复</a></li>
+                                <li><a href="aboutUs4.html" class="">情绪释放</a></li>
+                                <li><a href="aboutUs5.html" class="">职业老师</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="news">
+                            <a class="dropdown-toggle" href="news.html" >
+                                新闻资讯
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" id="new">
+                                <li><a href="" class="">会馆活动</a></li>
+                                <li><a href="" class="">常见问题</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="course.html">瑜伽课程</a></li>
+                        <li><a href="team.html">教练团队</a></li>
+                        <li><a href="environment.html">会馆环境</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="message.html">在线留言</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 导航栏 end -->
+
+    <!-- 轮播 begin -->
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-interval="2000">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/banner1.jpg" alt="First slide">
+                <div class="carousel-caption">
+                    <!-- <h2>
+                        梦想从这里起航
+                    </h2> -->
+                    <!-- <h1>国际瑜伽教育培训基地</h1> -->
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/banner2.jpg" alt="Second slide">
+                <div class="carousel-caption">
+                    <!-- <h2>十年瑜伽教育品牌</h2> -->
+                    <!-- <h1>瑜伽像在时尚圈里工作</h1> -->
+                </div>
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- 轮播 end -->
+
+    <!-- 服务 begin -->
+    <div class="service">
+        <div class="container">
+            <div class="row text-center">
+                <h2>优秀服务</h2>
+                <span class="small">缤纷瑜伽，人气登场，带你走进梦的殿堂；越练越健康，越练越美丽，越练越吸粉</span>
+            </div>
+            <div class="row">
+                <ul class="list-unstyled">
+                    <li class="col-xs-6 col-md-3">
+                        <div class="circular">
+                            <img src="img/service1.png">
+                        </div>
+                        <h4>塑形美体</h4>
+                        <p>瑜伽练习中肌肉的收束与伸展，可以强化骨骼关节的灵活性，也会让身体更加柔韧，让人变得修长，塑造曲线。</p>
+                    </li>
+                    <li class="col-xs-6 col-md-3">
+                        <div class="circular">
+                            <img src="img/service2.png">
+                        </div>
+                        <h4>经典纯粹</h4>
+                        <p>经过五千年体位法的淬炼，瑜伽可以在传统中塑造经典；在经典中结合现代，让人人成为瑜伽的受益者。</p>
+                    </li>
+                    <li class="col-xs-6 col-md-3">
+                        <div class="circular">
+                            <img src="img/service3.png">
+                        </div>
+                        <h4>理疗修复</h4>
+                        <p>瑜伽用正位体式可逐渐去修复理疗受伤的关节与肌群，强化锻炼平时忽略的身体部位，让健康从内而外地散发。</p>
+                    </li>
+                    <li class="col-xs-6 col-md-3">
+                        <div class="circular">
+                            <img src="img/service4.png">
+                        </div>
+                        <h4>情绪释放</h4>
+                        <p>通过阴瑜伽、 冥想等一些列“走心”的瑜伽，从身体层面的练习转至意识状态的稳定，抚慰您的情绪，疏导内在的压力，于繁华闹市中，寻回安宁和恬静，让身心重拾平衡。</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 服务 end -->
+
+    <!-- 关于我们 begin -->
+    <div class="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about-title">
+                        <h2>
+                            关于我们
+                        </h2>
+                    </div>
+                    <div class="about-box">
+                        塑身瑜伽馆于2002年成立，隶属世界瑜伽健身中心。15年来，先进、专业、卓越是我们不变的追求。在获得业界领头羊专业认可的同时，更是深受广大学生的信任与欢迎。
+                        塑身瑜伽馆，作为中国首家引进国际瑜伽课程的健身中心。自2007年开始，就开设了瑜伽教练培训的课程，至今瑜伽派别丰富实用，已经为中国瑜伽市场培育了近万名优秀的瑜伽教练。让众多学员通过培训，经历了
+                        ...
+                    </div>
+                    <div class="about-link">
+                        <a href="#" title="关于我们">
+                            查看更多
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <video class="about-video" src="video/video.mp4" autoplay controls loop width="100%">
+                        error
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 关于我们 end -->
+
+    <!-- 课程 begin -->
+    <div class="course courseone">
+        <div class="container">
+            <div class="row text-center">
+                <h2>瑜伽课程</h2>
+            </div>
+            <div class="row">
+                <ul class="list-unstyled">
+                    <li class="col-md-3 col-xs-6">
+                        <img src="img/course1.jpg" class="img-responsive" alt="">
+                        <h4 class="text-center">阴瑜伽(两天)</h4>
+                    </li>
+                    <li class="col-md-3 col-xs-6">
+                        <img src="img/course2.jpg" class="img-responsive" alt="">
+                        <h4 class="text-center">阿斯汤伽基础班(10天)</h4>
+                    </li>
+                    <li class="col-md-3 col-xs-6">
+                        <img src="img/course3.jpg" class="img-responsive" alt="">
+                        <h4 class="text-center">阿斯汤伽大班(13天)</h4>
+                    </li>
+                    <li class="col-md-3 col-xs-6">
+                        <img src="img/course4.jpg" class="img-responsive" alt="">
+                        <h4 class="text-center">哈他瑜伽教培班(28天)</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="row text-center cf">
+                <a href="" class="more">
+                    查看更多
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="course coursetwo">
+        <div class="container">
+            <div class="row text-center">
+                <h2>瑜伽课程</h2>
+            </div>
+            <div class="row">
+                <ul class="list-unstyled">
+                    <li class="col-md-4 col-xs-6">
+                        <img src="img/course1.jpg" class="img-responsive" alt="">
+                        <h4 class="text-center">阿斯汤伽基础班(10天)</h4>
+                    </li>
+                    <li class="col-md-4 col-xs-6">
+                        <img src="img/course2.jpg" class="img-responsive" alt="">
+                        <h4 class="text-center">阿斯汤伽大班(10天)</h4>
+                    </li>
+                    <li class="col-md-4 col-xs-6">
+                        <img src="img/course3.jpg" class="img-responsive" alt="">
+                        <h4 class="text-center">阿斯汤伽超级班(10天)</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="row text-center cf">
+                <a href="" class="more">
+                    查看更多
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 课程 end -->
+
+    <!-- 新闻资讯 begin -->
+    <div class="news">
+        <div class="container">
+            <div class="row text-center">
+                <h2>新闻资讯</h2>
+                <span>新闻资讯</span>
+            </div>
+            <div class="row content">
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li>
+                            <span class="activity">会馆活动</span>
+                            <div class="point">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </li>
+                        <li>
+                            <h5><a href=""><b>2021北京 首届中国瑜伽康复经营发展大会</b></a></h5>
+                            <p>
+                                导读:瑜伽康复势必成为中国瑜伽私教未来的发展趋势！所以本次大会将以现代科学作为瑜伽康复私教发展的核心；瑜伽康复的定义：是瑜伽与康...
+                            </p>
+                            <i class="time">
+                                2021年12月14日
+                            </i>
+                            <div>
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;
+                                <strong>
+                                    标签：
+                                </strong>
+                                <a href="">
+                                    瑜伽
+                                </a>
+                                <a href="">
+                                    康复
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <h5><a href=""><b>2021年第四届“瑜伽之爱”年度盛典 相约北京</b></a></h5>
+                            <p>
+                                亲爱的伽人们，自瑜伽之爱年度盛典启动以来，瑜伽人响应的热情超乎意料，大会将要呈献的精彩超乎意料，大会筹备组在感动中超乎常规的实...
+                            </p>
+                            <i class="time">
+                                2021年12月14日
+                            </i>
+                            <div>
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;
+                                <strong>
+                                    标签：
+                                </strong>
+                                <a href="">
+                                    瑜伽
+                                </a>
+                                <a href="">
+                                    康复
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <h5><a href=""><b>2021北京 首届中国瑜伽康复经营发展大会</b></a></h5>
+                            <p>
+                                导读:瑜伽康复势必成为中国瑜伽私教未来的发展趋势！所以本次大会将以现代科学作为瑜伽康复私教发展的核心；瑜伽康复的定义：是瑜伽与康...
+                            </p>
+                            <i class="time">
+                                2021年12月14日
+                            </i>
+                            <div>
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;
+                                <strong>
+                                    标签：
+                                </strong>
+                                <a href="">
+                                    瑜伽
+                                </a>
+                                <a href="">
+                                    康复
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li>
+                            <span class="activity">瑜伽资讯</span>
+                            <div class="point">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </li>
+                        <li>
+                            <h5><a href=""><b>练瑜伽为什么要选择瑜伽馆，而非健身房？</b></a></h5>
+                            <p>
+                                1、环境 瑜伽馆练习环境安静而舒适，人人摒气凝声，能为练习者营造平和的心态，有助于减轻心理压力。 2、课程 也会有一些瑜伽工作室很针...
+                            </p>
+                            <i class="time">
+                                2021年12月14日
+                            </i>
+                            <div>
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;
+                                <strong>
+                                    标签：
+                                </strong>
+                                <a href="">
+                                    瑜伽
+                                </a>
+                                <a href="">
+                                    康复
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <h5><a href=""><b>2021全民健身运动报告怎么看瑜伽市场</b></a></h5>
+                            <p>
+                                2009年，为了纪念北京成功举办奥运会，也为了倡导人民群众更广泛地参加体育健身运动，国务院将每年的8月8日定为全民健身日。在全民健身...
+                            </p>
+                            <i class="time">
+                                2021年12月14日
+                            </i>
+                            <div>
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;
+                                <strong>
+                                    标签：
+                                </strong>
+                                <a href="">
+                                    瑜伽
+                                </a>
+                                <a href="">
+                                    康复
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <h5><a href=""><b>练瑜伽为什么要选择瑜伽馆，而非健身房？</b></a></h5>
+                            <p>
+                                1、环境 瑜伽馆练习环境安静而舒适，人人摒气凝声，能为练习者营造平和的心态，有助于减轻心理压力。 2、课程 也会有一些瑜伽工作室很针...
+                            </p>
+                            <i class="time">
+                                2021年12月14日
+                            </i>
+                            <div>
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;
+                                <strong>
+                                    标签：
+                                </strong>
+                                <a href="">
+                                    瑜伽
+                                </a>
+                                <a href="">
+                                    康复
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新闻资讯 end -->
+
+    <!-- footer begin -->
+    <div class="footer">
+        <div class="container">
+            <div class="row footer-about">
+                <div class="col-xs-6 col-md-2">
+                    <ul class="list-unstyled">
+                        <li><h4>关于我们</h4></li>
+                        <li>塑形美体</li>
+                        <li>经典纯粹</li>
+                        <li>理疗修复</li>
+                        <li>情绪释放</li>
+                        <li>职业老师</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-2">
+                    <ul class="list-unstyled">
+                        <li><h4>新闻资讯</h4></li>
+                        <li>会馆活动</li>
+                        <li>瑜伽资讯</li>
+                        <li>常见问题</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-2">
+                    <ul class="list-unstyled">
+                        <li><h4>会馆信息</h4></li>
+                        <li>瑜伽课程</li>
+                        <li>教练团队</li>
+                        <li>会馆环境</li>
+                        <li>联系我们</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-2">
+                    <ul class="list-unstyled">
+                        <li><h4>更多关注</h4></li>
+                        <li>在线留言</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 hotline col-md-offset-1">
+                    <h4>服务热线</h4>
+                    <div>400-123-4567</div>
+                    <p>客服服务时段：周一至周五，9:30 - 20:30，节假日休息</p>
+                </div>
+            </div>            
+        </div>
+        <div class="footer-link text-center">
+            <a href="http://www.baidu.com">
+                友情链接 :百度一下
+            </a>
+        </div>
+        <div class="copyright text-center">Copyright © 2002-2022 靓仔瑜伽房 版权所有</div>
+    </div>
+    <!-- footer end -->
+    <button type="button" class="btn btn-default btn-lg" id="go-top" title="回到顶部">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </button>
+    <script src="js/common.js"></script>
+
+</body>
+
+</html>

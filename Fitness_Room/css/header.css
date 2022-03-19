@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(235, 235, 235);
+}
+a{
+    text-decoration: none !important;
+}
+/* 导航栏 begin */
+nav.navbar{
+    margin-bottom: 0px !important;
+}
+nav .container .logosearch{
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(104, 104, 104, 0.1);
+}
+nav .container .row div[class^="col-xs"]{
+   padding-left: 0px;
+   padding-right: 0px;
+}
+nav .container .row .search .input-group{
+    margin-top: 10px;
+}
+nav .container .row .collapse .nav > li{
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: 600;
+}
+/* 导航栏 end */

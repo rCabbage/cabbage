@@ -1,0 +1,60 @@
+a{
+    text-decoration: none ;
+    color: black;
+}
+a:hover{
+    font-weight: 600;
+}
+/* desc begin */
+.desc .stitle h1{
+    font-weight: 600;
+    color: darkblue;
+}
+.desc .stitle h1 span{
+    color: orange;
+}
+.desc .stitle h3{
+    color: rgba(36, 35, 35, 0.63);
+    font-size: 20px;
+}
+.desc .row+.row{
+    margin-top: 30px;
+}
+.desc .row .col-md-3 img{
+    transition: all 0.5s;
+}
+.desc .row .col-md-3:hover > img{
+    transform: translateY(-10px);
+}
+/* desc end */
+
+/* team begin */
+.team{
+    margin-bottom: 50px;
+}
+.team .row .col-md-6 .row .col-md-6{
+    padding-right: 0px;
+}
+.team .row .col-md-6 .row .conn .na{
+    /* float: left; */
+    padding: 10px 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: rgba(0, 0, 255, 0.63);
+}
+.team .row .col-md-6 .row .conn h4{
+    font-weight: 600;
+    color: darkblue;
+}
+.team .row .col-md-6 .row .more{
+    margin-left: 5px;
+    float: left;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid orange;
+}
+.team>.row + .row{
+    margin-top: 50px;
+}
+/* team end */

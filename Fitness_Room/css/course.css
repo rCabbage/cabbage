@@ -1,0 +1,58 @@
+/* banner begin */
+div.banner .col-xs-4{
+    padding: 0px;
+}
+div.banner .col-xs-4 h1{
+    position: absolute;
+    width: 100%;
+    margin-top: -50px;
+    font-size: 20px;
+    color: white;
+}
+/* banner end */
+
+/* con begin */
+.con{
+    margin-top: 100px;
+}
+.rec{
+    width: 100px;
+    height: 10px;
+    margin: 0px auto;
+    background-color: black;
+}
+.con .plan h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.con .plan .desc{
+    padding: 20px 0px;
+}
+.con .plan .desc p{
+    margin: 20px 0px;
+    font-size: 19px;
+    color: rgba(29, 29, 28, 0.466);
+}
+.con .plan .desc ul li{
+    padding-left: 20px;
+    margin-top: 20px;
+    border-left: 5px solid black;
+    font-size: 20px;
+}
+.con .plan .desc ul{
+    margin-bottom: 50px;
+}
+.con .plan .desc a{
+    display: block;
+    font-size: 20px;
+    color: black;
+}
+/* con end */
+
+.course .row + .row{
+    margin-top: 50px;
+}
+
+.course .row p{
+    margin-top: 20px;
+}
