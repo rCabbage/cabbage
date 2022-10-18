@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px; height: 400px;"></div>
+    <script>
+        let myCharts = echarts.init(document.getElementById('main'))
+        /** @type EChartsOption */
+        let option = {
+            color: ['red','green'],
+            // title: {
+            //     // x: 33,
+            //     text: '男性和女性身高、体重分布',
+            //     subtext: '抽样调查来自：FLQ2020',
+            // },
+            legend: {
+                data: ['一般值', '极值'],
+                // right: 20,
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataZoom: {},
+                    dataView: {},
+                    restore: {},
+                    saveAsImage: {},
+                },
+            },
+            xAxis: {
+                scale: true
+            },
+            yAxis: {
+                scale: true
+            },
+            series: [
+                {
+                    type: 'effectScatter',
+                    silent: false,
+                    name: '极值',
+                    legendHoverLink: false,
+                    hoverAnimation: false,
+                    effectType: 'ripple',
+                    showEffectOn: 'render',
+                    rippleEffect: {
+                        period: 2,
+                        scale: 5.5,
+                        brushType: 'fill',
+                    },
+                    symbolSize: 20,
+                    color: 'green',
+                    data: [
+                        [172.7, 87.2],
+                        [153.4, 42]
+                    ],
+                },
+                {
+                    name: '一般值',
+                    type: 'scatter',
+                    color: '#FFCCCC',
+                    data: [
+ [167.0, 64.6], [177.8, 74.8], [159.5, 58.0], [169.5, 68.0], [152.0, 45.8],
+ [163.0, 63.6], [157.5, 53.2], [164.5, 65.0], [163.5, 62.0], [166.4, 56.6],
+ [171.2, 65.1], [161.6, 58.9], [167.4, 67.7], [167.5, 63.0], [168.5, 65.2],
+ [181.1, 76.0], [165.0, 60.2], [174.5, 70.0], [171.5, 68.0], [163.0, 72.0],
+ [154.4, 46.2], [162.0, 55.0], [176.5, 83.0], [160.0, 54.4], [164.3, 59.8],
+ [162.1, 53.6], [170.0, 73.2], [160.2, 52.1], [161.3, 67.9], [178.0, 70.6],
+ [168.9, 62.3], [163.8, 58.5], [167.6, 54.5], [160.0, 50.2], [172.7, 87.2],
+ [167.6, 58.3], [165.1, 56.2], [160.0, 50.2], [170.0, 72.9], [157.5, 59.8],
+ [167.6, 61.0], [160.7, 69.1], [163.2, 55.9], [152.4, 46.5], [153.4, 42],
+ [168.3, 54.8], [180.3, 60.7], [165.5, 60.0], [165.0, 62.0], [164.5, 60.3]
+],
+
+                }
+            ],    
+        }
+        myCharts.setOption(option)
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" style="width: 100%"></div>
+    <script>
+        document.getElementById("main").style.height = document.documentElement.clientHeight + 'px'
+        let myChart = echarts.init(document.getElementById("main"))
+        /** @type EChartsOption */
+        let option = {
+            title: {
+                text: '各教育阶段男女人数统计',
+                right: 'center',
+            },
+            tooltip: {
+                show: true,
+            },
+            legend: {
+                data: ['男', '女'],
+                right: '10%',
+                orient: 'vertical',
+            },
+            radar: {
+            // shape: 'circle',
+                indicator: [
+                    { name: '高中', max: 9000000 },
+                    { name: '专科', max: 5000000 },
+                    { name: '本科', max: 3500000 },
+                    { name: '硕士', max: 800000 },
+                    { name: '博士', max: 20000 },
+                ],
+            },
+            series: [
+                {
+                    name: 'Budget vs spending',
+                    type: 'radar',
+
+                    data: [
+                        {
+                            value: [4600000, 2300000, 1900000, 420000, 13000],
+                            name: '男',
+                            lineStyle: {
+                                width: 5,
+                            },
+                            symbol: 'triangle',
+                            itemStyle: {
+                                borderColor: 'green',
+                                borderWidth: 5,
+                            },
+                        },
+                        {
+                            value: [4400000, 2700000, 1600000, 380000, 7000],
+                            name: '女',
+                        },
+                    ],
+                },
+            ],
+        }
+        myChart.setOption(option)
+        window.onresize = function(){
+            document.getElementById("main").style.height = document.documentElement.clientHeight + 'px'
+            myChart.resize()
+        }
+    </script>
+</body>
+</html>

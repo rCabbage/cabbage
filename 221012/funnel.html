@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 100%;"></div>
+    <script>
+        document.getElementById("main").style.height = document.documentElement.clientHeight+"px"
+        let myChart = echarts.init(document.getElementById("main"))
+        
+        /** @type EChartsOption */
+        let option = {
+            title: {
+                text: 'Funnel',
+                left: 'center',
+            },
+            tooltip: {},
+            toolbox: {
+                right: '35%',
+                feature: {
+                    dataView: { readOnly: false },
+                    restore: {},
+                    saveAsImage: {},
+                },
+            },
+            legend: {
+                top: 30,
+                data: ['浏览选购', '添加到购物车', '购物车结算', '核对订单信息', '提交订单', '选择支付方式', '完成支付'],
+            },
+            series: [
+                {
+                    name: '购物车',
+                    type: 'funnel',
+                    left: '10%',
+                    width: '80%',
+                    maxSize: '100%',
+                    label: {
+                        position: 'inside',
+                    },
+                    itemStyle: {
+                        opacity: 0.5,
+                        borderColor: '#fff',
+                        borderWidth: 2,
+                    },
+                    data: [
+                        { value: 30, name: '核对订单信息' },
+                        { value: 10, name: '提交订单' },
+                        { value: 5, name: '选择支付方式' },
+                        { value: 50, name: '购物车结算' },
+                        { value: 3, name: '完成支付' },
+                        { value: 75, name: '添加到购物车' },
+                        { value: 100, name: '浏览选购' },
+                    ],
+                    z: 100,
+                },
+            ],
+        }
+        myChart.setOption(option)
+        window.onresize = function(){
+            document.getElementById("main").style.height = document.documentElement.clientHeight+"px"
+            myChart.resize();
+        }
+    </script>
+</body>
+</html>

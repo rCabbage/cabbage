@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px; height: 400px;"></div>
+    <script>
+        let myCharts = echarts.init(document.getElementById('main'))
+        /** @type EChartsOption */
+        let option = {
+            color: ['red', 'green', 'blue', 'yellow', 'grey', '#FA8072'],
+            tooltip: {
+                trigger: 'axis',
+            },
+            legend: {
+                x: 200,
+                data: ['最高', '最低'],
+            },
+            toolbox: {
+                show: true,
+                orient: 'horizontal',
+                x: 'right',
+                y: 'top',
+                color: ['#1e90ff', '#22bb22', '#4b0082', '#d2691e'],
+                backgroundColor: 'rgba(0,0,0,0)',
+                borderColor: '#ccc',
+                borderWidth: 0,
+                padding: 5,
+                showTitle: true,
+                feature: {
+                    dataZoom: {
+                        show: true,
+                        title: {
+                            dataZoom:'区域缩放',
+                            dataZoomReset: '区域缩放-后退'
+                        },
+                    },
+                    dataView: {
+                        show: true,
+                        title: '数据视图',
+                        readOnly: false,
+                        lang: ['数据视图', '关闭', '刷新'],
+                        optionToContent: function(opt){
+                            var axisData = opt.xAxis[0].data
+                            var series = opt.series
+                            var table = 
+                            "<table style='width:100%;text-align:center;'><tbody><tr>"+"<td>时间</td>"
+                            +"<td>"+series[0].name+"</td>"+"<td>"+series[1].name+"</td>"+"</tr>"
+                            for (var i = 0, l = axisData.length; i<l;i++){
+                                table+= '<tr>' + '<td>' + axisData[i] + "</td>"+ '<td>' + series[0].data[i] + "</td>"
+                                     + '<td>' + series[1].data[i] + "</td>" + '</tr>'
+                            }
+                            table+='</body></table>'
+                            return table
+                        }
+                    },
+                    magicType: {
+                        show: true,
+                        title: {
+                            line: '动态类型切换-折线图',
+                            bar: '动态类型切换-柱状图',
+                            stack: '动态类型切换-堆积',
+                            tiled: '动态类型切换-平铺',
+                        },
+                        type: ['line', 'bar', 'stack', 'tiled'],
+                    },
+                    restore: {
+                        title: '还原',
+                        color: 'black'
+                    },
+                    saveAsImage: {
+                        title: '保存为图片',
+                        type: 'png',
+                        lang: ['单击本地保存']
+                    },
+                    myTool:{
+                        show: true,
+                        icon: 'image://http://echarts.baidu.com/images/favicon.png',
+                        onclick: function(){alert('hello world')}
+                    }
+                },
+            },
+            dataZoom: {
+                realtime: true,
+                start: 20,
+                end: 80,
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: function(){
+                    var list = []
+                    for(var i = 1; i<=30;i++){
+                        list.push('2020-03-'+i)
+                    }
+                    return list;
+                }()
+            },
+            yAxis: {
+                type: 'value',
+            },
+            series: [
+                {
+                    name: '最高',
+                    smooth: true,
+                    data: function(){
+                        var list = []
+                        for(var i = 0; i<=30;i++){
+                            list.push(Math.round(Math.random()*30) + 10)
+                        }
+                        return list;
+                    }(),
+                    type: 'line',
+                },
+                {
+                    name: '最低',
+                    smooth: true,
+                    data: function(){
+                        var list = []
+                        for(var i = 0; i<=30;i++){
+                            list.push(Math.round(Math.random()*30) * 10)
+                        }
+                        return list;
+                    }(),
+                    type: 'line',
+                },
+            ],
+        }
+        myCharts.setOption(option)
+    </script>
+</body>
+</html>

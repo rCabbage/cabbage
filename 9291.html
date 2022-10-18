@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="height: 400px;width: 600px;"></div>
+    <script>
+        let myCharts = echarts.init(document.getElementById('main'))
+        /** @type EChartsOption */
+        let option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow',
+                    lineStyle: {
+                        color: "#48b",
+                        width:2,
+                        type: "solid"
+                    },
+                    // crossStyle: {
+                    //     color: "#1e90ff",
+                    //     width: 1,
+                    //     type: 'dashed',
+                    // },
+                    shadowStyle: {
+                        color: 'rgba(150,150,150,0.2)',
+                    },
+                },
+                showDelay: 0,
+                hideDelay: 0,
+                transitionDuration: 0,
+                backgroundColor: 'rgba(0,222,0,0.5)',
+                borderColor: '#f50',
+                // borderRadius: 8,
+                borderWidth: 2,
+                padding: 10,
+                position: function(p){
+                    return [p[0]+10, p[1]-10]
+                },
+                textStyle: {
+                    color: 'blue',
+                    // decoration: 'none',
+                    fontFamily:'sans-serif',
+                    fontSize: 15,
+                    fontStyle: 'normal',
+                    fontWeight: 'bold',
+                },
+                formatter: function(param, ticket,callback){
+                    console.log(param)
+                    var res = '详情提示框:<br/>' + param[0].name
+                    for(var i = 0, l = param.length; i< l;i++){
+                        res += '<br/>' + param[i].seriesName + ":" + param[i].value
+                    }
+                    setTimeout(function(){
+                        callback(ticket,res)
+                    }, 500)
+                    return 'loading'
+                }
+            },
+            
+            toolbox: {
+                feature: {
+                    dataView: {},
+                    magicType: {type: ['line', 'bar', 'stack', 'tiled']},
+                    restore: {},
+                    saveAsImage: {},
+                },
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            },
+            yAxis: {
+                type: 'value',
+            },
+            series: [
+                {
+                    name: '坐标轴触发1',
+                    type: 'bar',
+                    data: [
+                        {
+                            value: 320,extra: 'hello~'
+                        },
+                        332,301,34,390,330,320
+                    ],
+                },
+                {
+                    name: '坐标轴触发2',
+                    type: 'bar',
+                    data: [862,1018,964,1026,1679,1600,157],
+                },
+                {
+                    name: '数据项触发1',
+                    type: 'bar',
+                    tooltip: {
+                        trigger: 'item',
+                        backgroundColor: 'black',
+                        position: [0,0],
+                        formatter: "Series formatter: <br/>{a}<br/>{b}:{c}"
+                    },
+                    stack: '数据项',
+                    data: [
+                        120,132,
+                        {
+                            value: 301,
+                            itemStyle: {
+                                color: 'red',
+                            },
+                            tooltip:{
+                                backgroundColor: 'blue',
+                                formatter: "Data formatter: <br/>{a}<br/>{b}:{c}"
+                            }
+                        },
+                        134,90,
+                        {
+                            value: 230,
+                            tooltip: {show: false}
+                        },210
+                    ],
+                },
+                {
+                    name: '数据项触发2',
+                    type: 'bar',
+                    tooltip: {
+                        show: true,
+                        trigger: 'item',
+                        formatter: 'hello'
+                    },
+                    stack: '数据项',
+                    data:[150, 232,201,154,190,330,410]
+                }
+            ],
+        }
+        myCharts.setOption(option)
+    </script>
+</body>
+</html>

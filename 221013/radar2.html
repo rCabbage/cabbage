@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" style="width: 100%"></div>
+    <script>
+        document.getElementById("main").style.height = document.documentElement.clientHeight + 'px'
+        let myChart = echarts.init(document.getElementById("main"))
+        /** @type EChartsOption */
+        let option = {
+            title: {
+                text: '浏览器占比变化',
+                left: 'center',
+            },
+            legend: {
+                type: 'scroll',
+                top: '5%',
+            },
+            tooltip: {},
+            visualMap: {
+                color: ['red', 'yellow'],
+                right: "10%",
+                top: "47%",
+                calculable: true,
+                range: [15, 50]
+            },
+            radar: {
+                indicator: [
+                    { name: 'IE8-', max: 400, color: "green" },
+                    { name: 'IE9+', max: 400, color: "green" },
+                    { name: 'Safari', max: 400, color: "blue" },
+                    { name: 'Firefox', max: 400, color: "blue" },
+                    { name: 'Chrome', max: 400, color: "red" },
+                ],
+            },
+            series: (function(){
+                let series = []
+                for (let index = 1; index <= 28; index++) {
+                    series.push({
+                        name: '浏览器(数据纯属虚构)',
+                        type: 'radar',
+                        data:[
+                            {
+                                value:[
+                                    [40-index] * 10,
+                                    (38 - index) * 4 + 60,
+                                    index * 5 + 10,
+                                    index * 9,
+                                    index * index / 2
+                                ],
+                                name: index + 2000 + ""
+                            }
+                        ]
+                    })
+                }
+                return series
+            })()
+        }
+        myChart.setOption(option)
+        window.onresize = function(){
+            document.getElementById("main").style.height = document.documentElement.clientHeight + 'px'
+            myChart.resize()
+        }
+    </script>
+</body>
+</html>

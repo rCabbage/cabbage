@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 第三章 -->
+    <!-- 10  11 -->
+    <script src="https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 100%;"></div>
+    <script>
+        let Sheight = document.documentElement.clientHeight
+        document.getElementById("main").style.height = Sheight+"px"
+        let myChart = echarts.init(document.getElementById("main"))
+        let data = [
+                {
+                    value: 50,
+                    name: '车速(km/h)',
+                },
+                {
+                    value: 1.5,
+                    name: '转速(x1000r/min)',
+                },
+                {
+                    value: 0.5,
+                    name: 'gas',
+                },
+                {
+                    value: 0.5,
+                    name: 'gas',
+                },
+        ]
+        /** @type EChartsOption */
+        let option = {
+            title: {
+                text: '多仪表盘实例（共4个仪表盘）',
+                textStyle: {
+                    fontSize: 30,
+                    fontFamily: '黑体',
+                },
+                left: 'center',
+            },
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%',
+            },
+            series: [
+                {
+                    name: '速度',
+                    type: 'gauge',
+                    min: 0,
+                    max: 220,
+                    splitNumber: 22,
+                    pointer: {
+                        width: 20
+                    },
+                    title: {
+                        fontWeight: 'bolder',
+                        fontSize: 20,
+                        fontStyle: 'italic',
+                    },
+                    detail: {
+                        formatter: '{value}',
+                    },
+                    data: [
+                        data[0]
+                    ]
+                },
+                {
+                    name: '转速',
+                    center: ['20%', '55%'],
+                    radius: '35%',
+                    type: 'gauge',
+                    min: 0,
+                    max: 7,
+                    endAngle: 45,
+                    splitNumber: 7,
+                    title: {
+                        fontWeight: 'bolder',
+                        fontSize: 20,
+                        fontStyle: 'italic',
+                    },
+                    detail: {
+                        formatter: '{value}',
+                    },
+                    data: [data[1]]
+                },
+                {
+                    name: '油表',
+                    center: ['77%', '55%'],
+                    radius: '25%',
+                    type: 'gauge',
+                    min: 0,
+                    max: 2,
+                    startAngle: 135,
+                    endAngle: 45,
+                    splitNumber: 2,
+                    title: {
+                        show: false,
+                        fontWeight: 'bolder',
+                        fontSize: 20,
+                        fontStyle: 'italic',
+                    },
+                    detail: {
+                        show: false,
+                        formatter: '{value}',
+                    },
+                    pointer: {
+                        width: 4,
+                    },
+                    axisTick: {
+                        splitNumber: 5,
+                        length: 10,
+                        
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            width: 8,
+                        },
+                    },
+                    axisLabel: {
+                        formatter: function(v){
+                            switch (v+''){
+                                case '0': return 'E';
+                                case '1': return '油表';
+                                case '2': return 'F';
+                            }
+                        }
+                    },
+                    data: [data[2]]
+                },
+                {
+                    name: '水表',
+                    center: ['77%', '55%'],
+                    radius: '25%',
+                    type: 'gauge',
+                    min: 0,
+                    max: 2,
+                    startAngle: 315,
+                    pointer: {
+                        width: 2,
+                    },
+                    endAngle: 225,
+                    splitNumber: 2,
+                    title: {
+                        show: false,
+                        fontWeight: 'bolder',
+                        fontSize: 20,
+                        fontStyle: 'italic',
+                    },
+                    detail: {
+                        show: false,
+                        formatter: '{value}',
+                    },
+                    axisTick: {
+                        splitNumber: 5,
+                        length: 10,
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            width: 8,
+                        },
+                    },
+                    axisLabel: {
+                        formatter: function(v){
+                            switch (v+''){
+                                case '0': return 'H';
+                                case '1': return '水表';
+                                case '2': return 'C';
+                            }
+                        }
+                    },
+                    data: [data[3]]
+                },
+            ],
+        }
+        myChart.setOption(option)
+        setInterval(()=>{
+            data[0].value = Math.floor(Math.random() * 220)
+            data[1].value = Math.floor(Math.random() * 7)
+            data[2].value = Math.floor(Math.random() * 2)
+            data[3].value = Math.floor(Math.random() * 2)
+            myChart.setOption(option)
+        }, 1000),
+        window.onresize = () => {
+            Sheight = document.documentElement.clientHeight
+            document.getElementById("main").style.height = Sheight+"px"
+            myChart.resize()
+        }
+    </script>
+</body>
+</html>

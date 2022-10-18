@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        function random(){
+            let r = Math.round(Math.random() * 90)
+            return (r * (r % 2 == 0? 1 : -1))
+        }
+        function randomDataArray(){
+            let d = []
+            let len = 100
+            while(len--){
+                d.push([random(), random(), Math.abs(random())])
+            }
+            return d
+        }
+        let myChart = echarts.init(document.getElementById("main"), 'dark',{
+            height: 600,
+            width: 1600
+        })
+        /** @type EChartsOption */
+        let option = {
+            color: ['#FFCCCC', 'green'],
+            title: {
+                x: 40,
+                text: '标准气泡图示例',
+                subtext: '随机生成',
+            },
+            tooltip: {
+                trigger: 'axis',
+                showDelay: 0,
+                axisPointer: {
+                    type: 'cross',
+                    lineStyle: {
+                        type: 'dashed',
+                        width: 1,
+                    },
+                },
+            },
+            legend: {
+                x: 240,
+                data: ['bubble1', 'bubble2'],
+            },
+            toolbox: {
+                x: 450,
+                feature: {
+                    dataView: {},
+                    dataZoom: {},
+                    restore: {},
+                    saveAsImage: {},
+                },
+            },
+            xAxis: {
+                type: 'value',
+                splitNumber: 4,
+                scale: true,
+            },
+            yAxis: {
+                type: 'value',
+                splitNumber: 4,
+                scale: true,
+            },
+            series: [
+                {
+                    name: 'bubble1',
+                    symbol: 'circle',
+                    symbolSize: function(v){
+                        return Math.round(v[2]/5)
+                    },
+                    data: randomDataArray(),
+                    type: 'scatter',
+                },
+                {
+                    name: 'bubble2',
+                    symbol: 'circle',
+                    symbolSize: function(v){
+                        return Math.round(v[2]/5)
+                    },
+                    data: randomDataArray(),
+                    type: 'scatter',
+                },
+            ],
+        }
+        myChart.setOption(option)
+    </script>
+</body>
+</html>
