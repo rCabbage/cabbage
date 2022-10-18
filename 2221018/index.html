@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 100%;"></div>
+    <script>
+        document.getElementById("main").style.height = document.documentElement.clientHeight + "px"
+        let myChart = echarts.init(document.getElementById("main"))
+        let builderJson = {
+            "all": 10887,
+            "charts": {
+                "地理坐标图": 3237,
+                "路径图": 2164,
+                "柱状图": 7561,
+                "折线图": 7778,
+                "饼图": 7355,
+                "散点图": 2405,
+                "k线图": 1842,
+                "雷达图": 2090,
+                "热力图": 1762,
+                "矩形树图": 1593,
+                "关系图": 2060,
+                "盒须图": 1537,
+                "平行坐标系": 1908,
+                "仪表盘图": 2107,
+                "漏斗图": 1692,
+                "桑基图": 1568,
+            },
+            "components": {
+                "地理坐标系组件": 2788,
+                "标题组件": 9575,
+                "图里组件": 9400,
+                "提示组件": 9466,
+                "直角坐标系组件": 9266,
+                "图标注册组件": 3419,
+                "图标标线组件": 2984,
+                "时间线组件": 2739,
+                "区域缩放组件": 2744,
+                "视觉映射组件": 2466,
+                "工具框组件": 3034,
+                "极坐标系组件": 1945,
+            },
+            "ie": 9743
+        }
+        let downloadJson = {
+            "完整版": 17365,
+            "将精简版": 4079,
+            "常用版": 6929,
+            "源代码版": 14890,
+        }
+        let themJson = {
+            "黑色主题": 1594,
+            "信息主题": 925,
+            "明亮主题": 1608,
+            "罗马主题": 721,
+            "马卡龙主题": 2179,
+            "复古主题": 1982,
+        }
+        let waterMarkText = " Echarts"
+        let canvas = document.createElement('canvas')
+        let ctx = canvas.getContext('2d')
+        canvas.width = canvas.height = 100
+        ctx.textAlign = "center"
+        ctx.textBaseline = "middle"
+        ctx.globalAlpha = 0.08
+        ctx.font = '20px Microsoft Yahei'
+        ctx.translate(50, 50)
+        ctx.rotate(-Math.PI / 4)
+        ctx.fillText(waterMarkText, 0, 0)
+        /** @type EChartsOption */
+        let option = {}
+        myChart.setOption(option)
+        window.onresize = function(){
+            document.getElementById("main").style.height = document.documentElement.clientHeight + "px"
+            myChart.resize()
+        }
+    </script>
+</body>
+</html>
