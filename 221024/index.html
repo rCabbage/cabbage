@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./dark.js"></script>
+    <script src="./infographic.js"></script>
+    <script src="./macarons.js"></script>
+    <script src="./vintage.js"></script>
+</head>
+<body>
+    <select name="theme" id="xx">
+        <option value="dark">dark</option>
+        <option value="infofraphic">infofraphic</option>
+        <option value="macarons">macarons</option>
+        <option value="vintage">vintage</option>
+    </select>
+    <div id="main" style="width: 100%;"></div>
+    <script>
+        document.getElementById("main").style.height = document.documentElement.clientHeight + 'px'
+        let myChart = echarts.init(document.getElementById("main"), 'dark')
+        /** @type EChartsOption */
+        let option = {
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            },
+            yAxis: {
+                type: 'value',
+            },
+            series: [
+                {
+                    data: [150, 230, 224, 218, 135, 147, 260],
+                    type: 'bar',
+                },
+            ],
+        }
+        myChart.setOption(option)
+        $("#xx").change(()=>{
+            let x = $("#xx option:selected").val();
+            myChart.dispose()
+            myChart = echarts.init(document.getElementById("main"), x)
+            myChart.setOption(option)
+        })
+        $(this).resize(
+            ()=>{
+            document.getElementById("main").style.height = document.documentElement.clientHeight + 'px'
+            myChart.resize()
+        }
+        )
+    </script>
+</body>
+</html>

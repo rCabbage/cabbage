@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="main" style="width: 100%;"></div>
+    <div id="main2" style="width: 100%;"></div>
+    <script>
+        document.getElementById("main").style.height = document.documentElement.clientHeight + 'px'
+        document.getElementById("main2").style.height = document.documentElement.clientHeight + 'px'
+        let myChart = echarts.init(document.getElementById("main"))
+        let myChart2 = echarts.init(document.getElementById("main2"))
+        let data = []
+        let now = new Date(2022,5,2,24,60,60)
+        let oneDay = 24 * 600 * 600
+        function randomData(){
+            now = new Date(+now + oneDay)
+            v = Math.random()*80 + 20
+            return {
+                name: now.toLocaleDateString('chinese', {hour12: false}),
+                value: [
+                    now.toLocaleDateString('chinese', {hour12: false}),
+                    Math.random(v)
+                ]
+            }
+        }
+        for (let i = 0; i < 300; i++) {
+            data.push(randomData())
+        }
+        /** @type EChartsOption */
+        let option1 = {
+            title: {
+                text: '在此图标中滚动鼠标',
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            xAxis: {
+                type: 'time',
+            },
+            yAxis: {
+                type: 'value',
+            },
+            dataZoom: [
+                {
+                    type: 'inside',
+                    start: 20,
+                    end: 70,
+                }
+            ],
+            series: [
+                {
+                    name: "模拟数据",
+                    type: "line",
+                    data: data,
+                }
+            ],
+        }
+        myChart.setOption(option1)
+        /** @type EChartsOption */
+        let option2 = {
+            title: {
+                text: '同上变化',
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            xAxis: {
+                type: 'time',
+            },
+            yAxis: {
+                type: 'value',
+            },
+            dataZoom: [
+                {
+                    type: "inside",
+                    show: true,
+                    start: 0,
+                    end: 100,
+                }
+            ],
+            series: [
+                {
+                    name: '模拟数据',
+                    type: "bar",
+                    data: data,
+                }
+            ],
+        }
+        myChart.setOption(option2)
+        $(this).resize(
+            ()=>{
+            document.getElementById("main").style.height = document.documentElement.clientHeight + 'px'
+            myChart.resize()
+            document.getElementById("main2").style.height = document.documentElement.clientHeight + 'px'
+            myChart.resize()
+        }
+        )
+    </script>
+</body>
+</html>
